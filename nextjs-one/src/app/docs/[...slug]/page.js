@@ -1,5 +1,5 @@
 export default function Docs({params}){
-    if(params.slug.length === 2){
+    if(params.slug?.length === 2){
         return (
             <> 
                 <h1>Docs</h1>
@@ -7,7 +7,7 @@ export default function Docs({params}){
             </>
         );
     }
-    else if(params.slug.length === 1){
+    else if(params.slug?.length === 1){
         return (
             <> 
                 <h1>Docs</h1>
