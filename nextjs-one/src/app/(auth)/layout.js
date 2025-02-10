@@ -2,8 +2,10 @@
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import Styles from '../../assets/style.module.css'
+import {useState} from 'react'
 export default function AuthLayout({ children }) {
     const pathname = usePathname()
+    const [input, setInput] = useState('')
     console.log('pathname',pathname)
     const navLinks = [
         { label: 'Login', href: '/login' },
@@ -18,6 +20,7 @@ export default function AuthLayout({ children }) {
                 </li>
             ))}
         </ol>
+        <input type="text" value={input} onChange={(e) => setInput(e.target.value)} />
         <div>
         {children}
         </div>

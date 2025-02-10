@@ -1,0 +1,32 @@
+/* components/loading.module.css */
+.loadingContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+  }
+  
+  .loadingShadow {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #3498db; /* Blue color, you can change it */
+    box-shadow: 0 0 20px rgba(52, 152, 219, 0.7);
+    animation: pulse 1.5s infinite ease-in-out;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(0.8);
+      box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.7);
+    }
+    50% {
+      transform: scale(1);
+      box-shadow: 0 0 20px 10px rgba(52, 152, 219, 0);
+    }
+    100% {
+      transform: scale(0.8);
+      box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.7);
+    }
+  }
