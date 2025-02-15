@@ -1,27 +1,36 @@
-export default function DashboardLayout({ children, notifications, revenue, user  }){
-    
+export default function DashboardLayout({ children, notifications, revenue, user, login  }){
+    let isLogin = true
     return (
         <>
+        {
+            isLogin ?
             <div>
-                {children}
-            </div>
-            <div style={{display:'flex',
-                justifyContent:'space-around'
-            }}>
                 <div>
-                    <div >
-                        {user}
+                    {children}
+                </div>
+                <div style={{display:'flex',
+                    justifyContent:'space-around'
+                }}>
+                    <div>
+                        <div >
+                            {user}
+                        </div>
+                        <div >
+                            {revenue}
+                        </div>
                     </div>
-                    <div >
-                        {revenue}
+                    <div>
+                        <div >
+                            {notifications}
+                        </div>
                     </div>
                 </div>
-                <div>
-                    <div >
-                        {notifications}
-                    </div>
-                </div>
             </div>
+            
+            :
+            login
+        }
+        
         </>
     )
 }
