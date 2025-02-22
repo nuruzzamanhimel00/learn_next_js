@@ -1,6 +1,9 @@
 import data from './data.js'
 export async function GET(request) {
-    return new Response(JSON.stringify(data))
+    const searchParams = request.nextUrl.searchParams
+    const query = searchParams.get('query')
+    let findData = query ? data.filter((item) => item.text.includes(query)) : data
+    return new Response(JSON.stringify(findData))
 }
 
 
